@@ -1,0 +1,56 @@
+- name: Project Stormwatch
+  image: https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg
+  link: /games/personal/project-stormwatch
+  start-date: 2024
+  tags: Solo, Unity, C#, Fantasy
+  wip: true
+
+- name: Parcel Run UE
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161347&authkey=%21ACX9JPD6mdHLwwA&width=990&height=487
+  link: /games/personal/parcel-run-ue
+  start-date: July 2024
+  tags: Solo, Unreal Engine, C++, PlasticSCM
+  downloadable: true
+
+- name: TactiKit Game
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161016&authkey=%21AG_g5DwcsMXTJEQ&width=903&height=903
+  link: /games/personal/tactikit-game
+  start-date: PLACEHOLDER
+  tags: Solo, Unity, C#, A* Pathfinding, Desirability Calculations, AI
+  playable: true
+  git: true
+
+- name: NDS Rhythm Game
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161024&authkey=%21ADP6AcE5uOadfnI&width=1920&height=1080
+  link: /games/personal/nds-rhythm-game
+  start-date: PLACEHOLDER
+  tags: Solo, C, Assembly, MakeFiles
+  downloadable: true
+  git: true
+
+- name: Captain Says Mobile
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160590&authkey=%21AApD3-Y0MVdFnDw&width=1920&height=1634
+  link: /games/personal/captain-says-mobile
+  start-date: PLACEHOLDER
+  tags: Solo, Unity, C#, Mobile
+
+- name: Ordos - Order & Chaos
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160670&authkey=%21ABttzCqlr8Aas4E&width=1920&height=1634
+  link: /games/personal/ordos-order-chaos
+  start-date: May 2020
+  tags: Solo, Unity, C#, Art
+  downloadable: true
+
+- name: Beat City
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160562&authkey=%21AJF96gS91su3y0w&width=1920&height=1634
+  link: /games/personal/beat-city
+  start-date: Feburary 2020
+  tags: Solo, Unity, C#
+  downloadable: true
+
+- name: Western Runner
+  image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160792&authkey=%21AFyBGBon1CKBThI&width=1920&height=1634
+  link: /games/personal/western-runner
+  start-date: November 2019
+  tags: Solo, Unreal Engine
+  downloadable: true

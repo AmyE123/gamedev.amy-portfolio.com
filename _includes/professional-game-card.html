@@ -1,5 +1,5 @@
 <div class="columns is-centered is-multiline is-mobile">
-    {% for project in site.data.professional-projects %}
+    {% for project in site.data.professional-games %}
     <div class="column has-text-centered is-marginless is-one-third-widescreen is-one-third-desktop is-one-fifth-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch"
          id="project-card">
         <a href="{{ site.baseurl | escape }}{{ project.link | escape }}" target="_blank">
@@ -30,6 +30,11 @@
                         {%- endunless -%}
                     </div>
                     <div class="icon-container" style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 5px;">
+                        {% if project.wip %}
+                        <span class="icon" style="font-size: 1rem; color: white;">
+                            <i class="fa fa-hammer"></i>
+                        </span>
+                        {% endif %}
                         {% if project.downloadable %}
                         <span class="icon" style="font-size: 1rem; color: white;">
                             <i class="fas fa-download"></i>
