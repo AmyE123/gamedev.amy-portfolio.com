@@ -1,14 +1,14 @@
 - name: TactiKit Toolkit
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161017&authkey=%21AGTK5Bu7tYMOFpk&width=1920&height=1080
   link: /projects/personal/tactikit-toolkit
-  start-date: PLACEHOLDER
+  start-date: Ongoing
   tags: Solo, Tools
   wip: true
 
 - name: Tool Dev Research
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161027&authkey=%21ANeM_VuY6Ijs3nQ&width=800&height=620
   link: /projects/personal/tool-dev-research
-  start-date: PLACEHOLDER
+  start-date: April 2024
   tags: Solo, Dissertation
   documented: true
 
@@ -18,12 +18,11 @@
   start-date: March 2024
   tags: Solo, Unity Asset, Published
   documented: true
-  wip: true
 
 - name: SFML & CMake Study
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160960&authkey=%21AKDsFl0qE-smgBY&width=1920&height=1634
   link: /projects/personal/sfml-cmake-study
-  start-date: PLACEHOLDER
+  start-date: July 2023
   tags: Solo, C++, SFML, CMake
   documented: true
   git: true
@@ -31,13 +30,13 @@
 - name: PS5 DevKit Study
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161187&authkey=%21AEn3H09xamb81bc&width=768&height=574
   link: /projects/personal/ps5-devkit-study
-  start-date: PLACEHOLDER
+  start-date: May 2023
   tags: Solo, C++, DevKit, DevTools
 
 - name: Amy's Math Library
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161019&authkey=%21AH_KybwF8dRWU08&width=505&height=175
   link: /projects/personal/amys-math-library
-  start-date: PLACEHOLDER
+  start-date: May 2023
   tags: Solo, Unity, C#, Math
   git: true
   documented: true

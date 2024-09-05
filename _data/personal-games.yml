@@ -1,7 +1,7 @@
 - name: Project Stormwatch
   image: https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg
   link: /games/personal/project-stormwatch
-  start-date: 2024
+  start-date: Ongoing
   tags: Solo, Unity, C#, Fantasy
   wip: true
 
@@ -15,7 +15,7 @@
 - name: TactiKit Game
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161016&authkey=%21AG_g5DwcsMXTJEQ&width=903&height=903
   link: /games/personal/tactikit-game
-  start-date: PLACEHOLDER
+  start-date: June 2024
   tags: Solo, Unity, C#, A* Pathfinding, Desirability Calculations, AI
   playable: true
   git: true
@@ -23,7 +23,8 @@
 - name: NDS Rhythm Game
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161024&authkey=%21ADP6AcE5uOadfnI&width=1920&height=1080
   link: /games/personal/nds-rhythm-game
-  start-date: PLACEHOLDER
+  start-date: Feb 2024
+  end-date: May 2024
   tags: Solo, C, Assembly, MakeFiles
   downloadable: true
   git: true
@@ -31,7 +32,7 @@
 - name: Captain Says Mobile
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160590&authkey=%21AApD3-Y0MVdFnDw&width=1920&height=1634
   link: /games/personal/captain-says-mobile
-  start-date: PLACEHOLDER
+  start-date: May 2020
   tags: Solo, Unity, C#, Mobile
 
 - name: Ordos - Order & Chaos
