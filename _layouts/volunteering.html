@@ -39,6 +39,22 @@
             cursor: pointer;
         }
 
+        .experience-card {
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .experience-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+        .card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
         @media (max-width: 768px) {
             .column.is-two-fifths-mobile {
                 flex: 0 0 100%;
@@ -47,7 +63,7 @@
         }
 
         .tag {
-            background-color: #3273dc; /* Adjust as needed */
+            background-color: #3273dc;
             color: white;
             font-size: 0.60rem;
             margin: 0.25rem;
@@ -71,28 +87,27 @@
                     <div class="columns is-centered is-multiline is-mobile">
                         {% for experience in site.data.volunteering %}
                         <div class="column has-text-centered is-marginless is-one-third-widescreen is-one-third-desktop is-one-third-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch">
-                            <div class="card has-background-white-ter experience-card" id="experience-card">
-                                {% if experience.image %}
-                                <div class="card-image">
-                                    <figure class="image is-2by1">
-                                        <img src="{{ experience.image }}" alt="{{ experience.role }}" style="width: 100%; height: 100%; object-fit: cover;">
-                                    </figure>
-                                </div>
-                                {% endif %}
-                                <div class="card-content">
-                                    <h2 class="title">{{ experience.role }}</h2>
-                                    <h3 class="subtitle-org">{{ experience.organisation }}</h3>
-                                    <div>
-                                        <span class="tag  is-link">{{ experience.tag }}</span> <!-- Display the tag -->
+                            <a href="{{ experience.link }}" class="card-link" target="_blank">
+                                <div class="card has-background-white-ter experience-card" id="experience-card">
+                                    {% if experience.image %}
+                                    <div class="card-image">
+                                        <figure class="image is-2by1">
+                                            <img src="{{ experience.image }}" alt="{{ experience.role }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </figure>
                                     </div>
-                                    <p class="subtitle">{{ experience.date }}</p>
-                                    <p class="description truncate truncate-3-lines">{{ experience.description }}</p>
-                                    <span class="read-more" onclick="toggleDescription(this)">Read More</span>
-                                    {% if experience.link %}
-                                    <p><a href="{{ experience.link }}" target="_blank">More Info</a></p>
                                     {% endif %}
+                                    <div class="card-content">
+                                        <h2 class="title">{{ experience.role }}</h2>
+                                        <h3 class="subtitle-org">{{ experience.organisation }}</h3>
+                                        <div>
+                                            <span class="tag is-link">{{ experience.tag }}</span>
+                                        </div>
+                                        <p class="subtitle">{{ experience.date }}</p>
+                                        <p class="description truncate truncate-3-lines">{{ experience.description }}</p>
+                                        <span class="read-more" onclick="toggleDescription(this, event)">Read More</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         {% endfor %}
                     </div>
@@ -103,7 +118,9 @@
     </section>
 
     <script>
-    function toggleDescription(element) {
+        function toggleDescription(element, event) {
+            event.preventDefault(); // Prevent the link from being triggered
+            event.stopPropagation(); // Stop the event from propagating to the parent <a> tag
             var description = element.previousElementSibling;
             if (description.classList.contains('truncate-3-lines')) {
                 description.classList.remove('truncate-3-lines');
@@ -112,6 +129,19 @@
                 description.classList.add('truncate-3-lines');
                 element.innerText = "Read More";
             }
-        }</script>
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var cards = document.querySelectorAll('.experience-card');
+            cards.forEach(function (card) {
+                var description = card.querySelector('.description');
+                var readMore = card.querySelector('.read-more');
+                // If the description is short enough to not need truncation, hide the "Read More"
+                if (description.scrollHeight <= description.clientHeight) {
+                    readMore.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

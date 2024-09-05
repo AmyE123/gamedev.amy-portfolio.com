@@ -1,6 +1,6 @@
 - name: Toni The Tiny Wizard
   image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-APcK3ORBaLd6cZDQ?embed=1&width=315&height=250
-  link: /projects/gamejam/toni-the-tiny-wizard
+  link: /games/gamejam/toni-the-tiny-wizard
   start-date: Aug 2024
   tags: Platformer, Cute
   playable: true
@@ -8,7 +8,7 @@
 
 - name: Tiny Tree
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160885&authkey=%21ABbhJav-D7DrMFo&width=1920&height=1634
-  link: /projects/gamejam/tiny-tree
+  link: /games/gamejam/tiny-tree
   start-date: Feb 2023
   tags: Tower Sim, Cute, Relaxing
   playable: true
@@ -16,7 +16,7 @@
 
 - name: HydroRobia
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160878&authkey=%21APN2cTSlD8QOtR0&width=1920&height=1634
-  link: /projects/gamejam/hydrorobia
+  link: /games/gamejam/hydrorobia
   start-date: Oct 2022
   tags: Time Race, Platforming, Puzzle
   playable: true
@@ -24,125 +24,125 @@
 
 - name: Ready To Roll
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160881&authkey=%21AFRd8WFWZX3Y9NE&width=1920&height=1634
-  link: /projects/gamejam/ready-to-roll
+  link: /games/gamejam/ready-to-roll
   start-date: July 2022
   tags: Time Race, Baking
   playable: true
 
 - name: Parcel Run
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160687&authkey=%21AGuH4uXKAxnJ5y0&width=1920&height=1634
-  link: /projects/gamejam/parcel-run 
+  link: /games/gamejam/parcel-run 
   start-date: April 2022
   tags: Time Race, Funny, Competitive
   playable: true
 
 - name: Toy Tactics
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160769&authkey=%21AIQ9PrSFvwIvi_0&width=1920&height=1634
-  link: /projects/gamejam/toy-tactics
+  link: /games/gamejam/toy-tactics
   start-date: October 2021
   tags: Tactics, Artificial Intelligence, Puzzles, Worms
   playable: true
 
 - name: In Too Deep
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160637&authkey=%21ALdwUTWqSwA92Rg&width=1920&height=1634
-  link: /projects/gamejam/in-too-deep
+  link: /games/gamejam/in-too-deep
   start-date: April 2021
   tags: Mining, Tycoon, Survival, Action
   playable: true
 
 - name: Airport - Lost & Found
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160559&authkey=%21APmcTH__OJxhRPk&width=1920&height=1634
-  link: /projects/gamejam/airport-lost-found
+  link: /games/gamejam/airport-lost-found
   start-date: Jan 2021
   tags: Crazy Taxi, Time Race
   playable: true
 
 - name: Aqua Adventure
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160560&authkey=%21ACSz8GusYrSVTf4&width=1920&height=1634
-  link: /projects/gamejam/aqua-adventure
+  link: /games/gamejam/aqua-adventure
   start-date: December 2020
   tags: Shoot em up, Retro, Action
 
 - name: Poppin' Hoppin' Unlockin'
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160690&authkey=%21ABGlol0EsvzmLRI&width=1920&height=1634
-  link: /projects/gamejam/poppin-hoppin-unlockin
+  link: /games/gamejam/poppin-hoppin-unlockin
   start-date: November 2020
   tags: Platformer, Fantasy
   playable: true
 
 - name: Blocky Road
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160567&authkey=%21AMXlgZm7LPD75S8&width=1920&height=1634
-  link: /projects/gamejam/blocky-road
+  link: /games/gamejam/blocky-road
   start-date: October 2020
   tags: Solo, Hypercasual, Teamwork, Puzzles
   playable: true
 
 - name: Driven Round the Loop
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160597&authkey=%21ADCFKSImPISDzFo&width=1920&height=1634
-  link: /projects/gamejam/driven-round-the-loop
+  link: /games/gamejam/driven-round-the-loop
   start-date: October 2020
   tags: Puzzles, Casual, Cars
   playable: true
 
 - name: Boxy See, Boxy Do
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160585&authkey=%21ACF_jVJKIZRMvg4&width=1920&height=1634
-  link: /projects/gamejam/boxy-see-boxy-do
+  link: /games/gamejam/boxy-see-boxy-do
   start-date: July 2020
   tags: Teamwork, Puzzles, Strategy
   playable: true
 
 - name: Somewhere In Berkshire
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160718&authkey=%21AFY7hXmfaOe8JlU&width=1920&height=1634
-  link: /projects/gamejam/somewhere-in-berkshire
+  link: /games/gamejam/somewhere-in-berkshire
   start-date: June 2020
   tags: Adventure, Walking Simulator
   playable: true
 
 - name: The Dragonsitter
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160740&authkey=%21ADrmAL1xBRSrg_0&width=1920&height=1634
-  link: /projects/gamejam/the-dragonsitter
+  link: /games/gamejam/the-dragonsitter
   start-date: April 2020
   tags: Digital Pet, Fantasy
   playable: true
 
 - name: Tactics Toe
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161029&authkey=%21AKw-xTlNIzbBXbI&width=315&height=250
-  link: /projects/gamejam/tactics-toe
+  link: /games/gamejam/tactics-toe
   start-date: July 2022
   tags: Solo, Strategy
   playable: true
 
 - name: Team Swap Heroes
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160733&authkey=%21ABRNna40xOifMcU&width=1920&height=1634
-  link: /projects/gamejam/team-swap-heroes
+  link: /games/gamejam/team-swap-heroes
   start-date: Feburary 2020
   tags: Teamwork, Puzzles
   playable: true
 
 - name: Village Simulator
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160780&authkey=%21AGVd-25o4FjE5rU&width=1920&height=1634
-  link: /projects/gamejam/village-simulator
+  link: /games/gamejam/village-simulator
   start-date: October 2019
   tags: Simulator, City Builder
   playable: true
 
 - name: Captain Says
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160590&authkey=%21AApD3-Y0MVdFnDw&width=1920&height=1634
-  link: /projects/gamejam/captain-says
+  link: /games/gamejam/captain-says
   start-date: April 2019
   tags: Solo, Educational, Casual
   playable: true
 
 - name: Only One Recruit
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160654&authkey=%21AAsAYsBzZb_yTHY&width=1920&height=1634
-  link: /projects/gamejam/only-one-recruit
+  link: /games/gamejam/only-one-recruit
   start-date: August 2019
   tags: Teamwork, Puzzles, Retro
   playable: true
 
 - name: Welcome To Yelapa
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160783&authkey=%21AHqVqKMW5lRUVxs&width=1920&height=1634
-  link: /projects/gamejam/welcome-to-yelapa
+  link: /games/gamejam/welcome-to-yelapa
   start-date: June 2019
   tags: Puzzles, Adventure, Casual
   playable: true

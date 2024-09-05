@@ -131,26 +131,38 @@ layout: compress
     {% include navbar.html %}
     {% include small-showcase.html %}
 
-    <!--Personal Projects Section-->
-    <section class="hero is-halfsize" id="personal-projects">
+    <!--Professional Games Section-->
+    <section class="hero is-halfsize" id="professional-games">
         <div class="hero-body" id="project" style="padding-top: 0px !important">
             <div class="container has-text-centered">
                 <div class="section">
-                    <p class="subtitle is-uppercase has-text-weight-medium has-text-grey section-title">Personal Projects</p>
+                    <p class="subtitle is-uppercase has-text-weight-medium has-text-grey section-title">Professional Games</p>
                 </div>
-                {% include project-card.html %}
+                {% include professional-game-card.html %}
             </div>
         </div>
     </section>
 
-    <!--Other Section-->
-    <section class="hero is-small has-background-white-ter" id="others">
+    <!--Personal Games Section-->
+    <section class="hero is-small has-background-white-ter" id="personal-games">
         <div class="hero-body" id="project">
             <div class="container has-text-centered">
                 <div class="section">
-                    <p class="subtitle is-uppercase has-text-weight-medium has-text-grey section-title">Other</p>
+                    <p class="subtitle is-uppercase has-text-weight-medium has-text-grey section-title">Personal Games</p>
                 </div>
-                {% include other-card.html %}
+                {% include personal-game-card.html %}
+            </div>
+        </div>
+    </section>
+
+    <!--Gamejams Section-->
+    <section class="hero is-small" id="gamejams">
+        <div class="hero-body" id="project">
+            <div class="container has-text-centered">
+                <div class="section">
+                    <p class="subtitle is-uppercase has-text-weight-medium has-text-grey section-title">Gamejams</p>
+                </div>
+                {% include gamejam-card.html %}
             </div>
         </div>
     </section>
@@ -161,8 +173,9 @@ layout: compress
     <!-- Bottom Navbar for easy navigation -->
     <nav class="bottom-navbar" role="navigation" aria-label="bottom navigation">
         <div class="navbar-menu">
-            <a class="navbar-item is-size-8-mobile" href="#personal-projects"><span>Personal</span></a>
-            <a class="navbar-item is-size-8-mobile" href="#others"><span>Other</span></a>
+            <a class="navbar-item is-size-8-mobile" href="#professional-games"><span>Professional</span></a>
+            <a class="navbar-item is-size-8-mobile" href="#personal-games"><span>Personal</span></a>
+            <a class="navbar-item is-size-8-mobile" href="#gamejams"><span>Gamejams</span></a>
         </div>
     </nav>
 
