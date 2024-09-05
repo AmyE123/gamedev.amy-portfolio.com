@@ -81,6 +81,10 @@ collections:
     output: true
     permalink: /projects/:categories/:title/
 
+  games:
+    output: true
+    permalink: /games/:categories/:title/
+
 # Exclude
 exclude:
   - .sass-cache/

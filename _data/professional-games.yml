@@ -1,55 +1,56 @@
 - name: Stampede Racing Royale
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160466&authkey=%21ABcky1dXpufoWDE&width=4365&height=2493
-  link: /projects/professional/stampede-racing-royale
+  link: /games/professional/stampede-racing-royale
   start-date: Aug 2021
   end-date: Present
   tags: Sumo, C#, Unity
+  wip: true
 
 - name: Old School RuneScape
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160484&authkey=%21ADmLN3wUgB-KLw0&width=1201&height=631
-  link: /projects/professional/old-school-runescape
+  link: /games/professional/old-school-runescape
   start-date: May 2021
   end-date: Aug 2021
   tags: Jagex, C++, Proprietary Engine
 
 - name: Unannounced AAA MMORPG
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160496&authkey=%21AApRgrY8svbfSME&width=1920&height=1080
-  link: /projects/professional/unannounced-aaa-mmorpg
+  link: /games/professional/unannounced-aaa-mmorpg
   start-date: May 2021
   end-date: Aug 2021
   tags: Jagex, C++, Unreal Engine
 
 - name: Redzone Runner DX
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160498&authkey=%21AFQN6WXj8f29N4w&width=1920&height=1440
-  link: /projects/professional/redzone-runner-dx
+  link: /games/professional/redzone-runner-dx
   start-date: Aug 2022
-  end-date: Oct 2023
+  end-date: Present
   tags: Altered Gene, C#, Unity, Mobile
 
 - name: Unannounced Games (2)
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160500&authkey=%21AFL-3ggDY3iq7vU&width=743&height=529
-  link: /projects/professional/unannounced-ag-games
+  link: /games/professional/unannounced-ag-games
   start-date: Jul 2022
   end-date: Present
   tags: Altered Gene
 
 - name: Unannounced Math Game
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160503&authkey=%21AFAQ0syHUEe_WNo&width=463&height=615
-  link: /projects/professional/unannounced-math-game
+  link: /games/professional/unannounced-math-game
   start-date: Jul 2022
   end-date: Aug 2022
   tags: Atypical Types, Altered Gene
 
 - name: Orb Odyssey
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160509&authkey=%21ADDwmtkh-diivQ0&width=1800&height=914
-  link: /projects/professional/orb-odyssey
+  link: /games/professional/orb-odyssey
   start-date: Nov 2023
   end-date: Mar 2024
   tags: UoP, C#, Unity, 4DoF, VR
 
 - name: Submarine Simulator
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160491&authkey=%21AFh41OysY8O8sRw&width=1920&height=1634
-  link: /projects/professional/submarine-simulator
+  link: /games/professional/submarine-simulator
   start-date: Mar 2021
   end-date: Apr 2021
   tags: UoP, The Royal Navy, C#, Unity

@@ -1,5 +1,5 @@
 ---
-title: TactiKit Toolkit Concept
+title: TactiKit Toolkit
 categories: personal
 layout: project
 post-image: " "

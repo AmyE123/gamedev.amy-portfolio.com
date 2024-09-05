@@ -1,31 +1,31 @@
 <div class="columns is-centered is-multiline is-mobile">
-    {% for gamejam in site.data.gamejams %}
-    <div class="column has-text-centered is-marginless is-one-third-widescreen is-one-third-desktop is-one-fifth-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch"
+    {% for project in site.data.personal-projects %}
+    <div class="column has-text-centered is-marginless is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch"
          id="project-card">
-        <a href="{{ gamejam.link  | escape }}" target="_blank">
+        <a href="{{ site.baseurl | escape }}{{ project.link | escape }}" target="_blank">
             <div class="has-background-black card">
-                <figure class="image is-4by3" style="background-image: url({{ gamejam.image | escape }});">
+                <figure class="image is-4by3" style="background-image: url({{ project.image | escape }});">
                 </figure>
                 <div class="card-content">
                     <div class="title-container">
-                        <h1 class="title has-text-white is-size-4 fixed-title">{{ gamejam.name  | escape }}</h1>
+                        <h1 class="title has-text-white is-size-4 fixed-title">{{ project.name | escape }}</h1>
                     </div>
                     <!-- Date Range Section -->
-                    {% if gamejam.start-date %}
+                    {% if project.start-date %}
                     <div class="date-range" style="margin-top: 5px;">
-                        <p class="is-size-7 has-text-grey-light">{{ gamejam.start-date | escape }} {% if gamejam.end-date %} - {{ gamejam.end-date | escape }} {% endif %} </p>
+                        <p class="is-size-7 has-text-grey-light">{{ project.start-date | escape }} {% if project.end-date %} - {{ project.end-date | escape }} {% endif %} </p>
                     </div>
                     {% endif %}
                     <div class="tags-container" style="margin-top: 10px;">
-                        {%- assign tags = gamejam.tags | split: ',' -%}
+                        {%- assign tags = project.tags | split: ',' -%}
                         {%- unless tags.size == 0 -%}
                         <p class="is-uppercase" style="font-size: 0.75rem;">
                             {% for tag in tags %}
                             {% assign tag_strip = tag | strip %}
                             {% if tag_strip == "Solo" %}
-                            <span class="tag" style="font-size: 0.60rem; margin-bottom: 0.25rem; background-color: gold; color: black;">{{ tag_strip }}</span>
+                            <span class="tag" style="font-size: 0.60rem; margin-bottom: 0.25rem; background-color: gold; color: black;">{{ tag_strip | escape }}</span>
                             {% else %}
-                            <span class="tag is-link" style="font-size: 0.60rem; margin-bottom: 0.25rem;">{{ tag_strip }}</span>
+                            <span class="tag is-link" style="font-size: 0.60rem; margin-bottom: 0.25rem;">{{ tag_strip | escape }}</span>
                             {% endif %}
                             {% endfor %}
                         </p>
@@ -37,19 +37,19 @@
                             <i class="fa fa-hammer"></i>
                         </span>
                         {% endif %}
-                        {% if gamejam.downloadable %}
+                        {% if project.downloadable %}
                         <span class="icon" style="font-size: 1rem; color: white;">
                             <i class="fas fa-download"></i>
                         </span>
                         {% endif %}
-                        {% if gamejam.git %}
+                        {% if project.git %}
                         <span class="icon" style="font-size: 1rem; color: white;">
                             <i class="fab fa-git-alt"></i>
                         </span>
                         {% endif %}
-                        {% if gamejam.playable %}
+                        {% if project.documented %}
                         <span class="icon" style="font-size: 1rem; color: white;">
-                            <i class="fas fa-gamepad"></i>
+                            <i class="fa fa-file-text"></i>
                         </span>
                         {% endif %}
                     </div>

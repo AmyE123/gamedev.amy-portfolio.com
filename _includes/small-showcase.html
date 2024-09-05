@@ -1,9 +1,13 @@
 <section class="hero is-halfheight has-text-centered" id="hero">
     <div class="hero-body">
         <video id="hero-video" autoplay muted playsinline loop>
+        {% if page.title != "Projects" %}
             <source src="https://onedrive.live.com/download?resid=9594E849DC7FC39E%2160477&authkey=!AKyn8XT9j86gY6Q" type="video/mp4">
             <source src="https://onedrive.live.com/download?resid=9594E849DC7FC39E%2160478&authkey=!AEpaeSAh2gpGSHY" type="video/ogg">
             Your browser does not support the video tag.
+        {% else %}
+            <source src="https://onedrive.live.com/download?resid=9594E849DC7FC39E!61477&authkey=!AA56M67VlXnIuDs" type="video/mp4">
+        {% endif %}
         </video>
         <div class="container">
             <h1 class="title has-text-white is-size-1 is-uppercase has-text-weight-bold">
@@ -12,22 +16,48 @@
             <h3 class="subtitle has-text-white-bis is-uppercase has-text-weight-medium is-marginless">
                 {{ page.description | escape }}
             </h3>
-            {% if page.title == "Projects" %}
-                <!-- Icon Key -->
-                <div class="icon-key">
-                    <div class="icon">
-                        <i class="fas fa-gamepad"></i>
-                        <span class="label is-size-7 has-text-grey-light">Playable On Browser</span>
-                    </div>
-                    <div class="icon">
-                        <i class="fab fa-git-alt"></i>
-                        <span class="label is-size-7 has-text-grey-light">Public Repository</span>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-download"></i>
-                        <span class="label is-size-7 has-text-grey-light">Downloadable</span>
-                    </div>
+            {% if page.title == "Games" %}
+            <!-- Icon Key -->
+            <div class="icon-key">
+                <div class="icon">
+                    <i class="fas fa-gamepad"></i>
+                    <span class="label is-size-7 has-text-grey-light">Playable On Browser</span>
                 </div>
+                <div class="icon">
+                    <i class="fab fa-git-alt"></i>
+                    <span class="label is-size-7 has-text-grey-light">Public Repository</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-download"></i>
+                    <span class="label is-size-7 has-text-grey-light">Downloadable</span>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-hammer"></i>
+                    <span class="label is-size-7 has-text-grey-light">Work In Progress</span>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page.title == "Projects" %}
+            <!-- Icon Key -->
+            <div class="icon-key">
+                <div class="icon">
+                    <i class="fa fa-file-text"></i>
+                    <span class="label is-size-7 has-text-grey-light">Documented</span>
+                </div>
+                <div class="icon">
+                    <i class="fab fa-git-alt"></i>
+                    <span class="label is-size-7 has-text-grey-light">Public Repository</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-download"></i>
+                    <span class="label is-size-7 has-text-grey-light">Downloadable</span>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-hammer"></i>
+                    <span class="label is-size-7 has-text-grey-light">Work In Progress</span>
+                </div>
+            </div>
             {% endif %}
         </div>
     </div>
