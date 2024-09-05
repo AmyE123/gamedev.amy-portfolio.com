@@ -11,6 +11,7 @@
   start-date: July 2024
   tags: Solo, Unreal Engine, C++, PlasticSCM
   downloadable: true
+  git: true
 
 - name: TactiKit Game
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161016&authkey=%21AG_g5DwcsMXTJEQ&width=903&height=903
