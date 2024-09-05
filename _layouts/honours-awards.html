@@ -1,7 +1,3 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,11 +40,45 @@ layout: compress
             color: #555;
         }
 
+        .truncate {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+
+        .truncate-3-lines {
+            -webkit-line-clamp: 3;
+        }
+
+        .read-more {
+            color: blue;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .column.is-two-fifths-mobile {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
+        }
+
+        /* Add hover and clickable styles */
+        .honour-card {
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .honour-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+        .card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
@@ -66,24 +96,24 @@ layout: compress
                     <div class="columns is-centered is-multiline is-mobile">
                         {% for honour in site.data.honours-awards %}
                         <div class="column has-text-centered is-marginless is-one-third-widescreen is-one-third-desktop is-one-third-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch">
-                            <div class="card has-background-white-ter honour-card" id="honour-card">
-                                {% if honour.image %}
-                                <div class="card-image">
-                                    <figure class="image is-2by1">
-                                        <img src="{{ honour.image }}" alt="{{ honour.title }}" style="width: 100%; height: 100%; object-fit: cover;">
-                                    </figure>
-                                </div>
-                                {% endif %}
-                                <div class="card-content">
-                                    <h2 class="title">{{ honour.title }}</h2>
-                                    <span class="position {% if honour.position == 'FINALIST' %}finalist{% elsif honour.position == 'Nominee' %}nominee{% elsif honour.position == 'WINNER' %}winner{% endif %}">{{ honour.position }}</span>
-                                    <p class="subtitle">{{ honour.date }}</p>
-                                    <p>{{ honour.description }}</p>
-                                    {% if honour.link %}
-                                    <p><a href="{{ honour.link }}" target="_blank">Read More</a></p>
+                            <a href="{{ honour.link }}" class="card-link" target="_blank">
+                                <div class="card has-background-white-ter honour-card" id="honour-card">
+                                    {% if honour.image %}
+                                    <div class="card-image">
+                                        <figure class="image is-2by1">
+                                            <img src="{{ honour.image }}" alt="{{ honour.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </figure>
+                                    </div>
                                     {% endif %}
+                                    <div class="card-content">
+                                        <h2 class="title">{{ honour.title }}</h2>
+                                        <span class="position {% if honour.position == 'FINALIST' %}finalist{% elsif honour.position == 'Nominee' %}nominee{% elsif honour.position == 'WINNER' %}winner{% endif %}">{{ honour.position }}</span>
+                                        <p class="subtitle">{{ honour.date }}</p>
+                                        <p class="description truncate truncate-3-lines">{{ honour.description }}</p>
+                                        <span class="read-more" onclick="toggleDescription(this, event)">Read More</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         {% endfor %}
                     </div>
@@ -92,5 +122,32 @@ layout: compress
         </div>
         {% include footer.html %}
     </section>
+
+    <script>
+        function toggleDescription(element, event) {
+            event.preventDefault(); // Prevent the link from being triggered
+            event.stopPropagation(); // Stop the event from propagating to the parent <a> tag
+            var description = element.previousElementSibling;
+            if (description.classList.contains('truncate-3-lines')) {
+                description.classList.remove('truncate-3-lines');
+                element.innerText = "Read Less";
+            } else {
+                description.classList.add('truncate-3-lines');
+                element.innerText = "Read More";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var cards = document.querySelectorAll('.honour-card');
+            cards.forEach(function (card) {
+                var description = card.querySelector('.description');
+                var readMore = card.querySelector('.read-more');
+                // If the description is short enough to not need truncation, hide the "Read More"
+                if (description.scrollHeight <= description.clientHeight) {
+                    readMore.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
