@@ -1,3 +1,17 @@
+- title: "Graduate of the Year: Computer Games Technology"
+  position: FINALIST
+  date: September 2024
+  image: https://media.licdn.com/dms/image/v2/D4D2DAQEJ2Q4_bpoYlg/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1725451632839?e=1726185600&v=beta&t=eKAMF0E7xTqVj2T8f-7R8ThuJry0a-u7UgPGLszgULE
+  description: "Shortlisted for the TIGA UK Games Education Awards 2024 Graduate of the Year: Computer Games Technology award. Sponsored by Creative Assembly (Headline Sponsor), Sumo Group (Gold Sponsor), and Lockwood Publishing (Bronze Sponsor), these awards celebrate outstanding students in Games Development courses. Finalists were selected by judges from the TIGA Education Committee, with winners to be announced during a ceremony later this autumn."
+  link: https://tiga.org/news/cream-of-the-crop-tiga-reveals-shortlist-for-uk-games-education-awards-2024
+
+- title: "Graduate of the Year: Programmer"
+  position: FINALIST
+  date: September 2024
+  image: https://media.licdn.com/dms/image/v2/D4D2DAQE6zeA0LP8wzA/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1725451465475?e=1726185600&v=beta&t=wcebS6e-YyrzN9ge5njQBnC_RWaZmIyX-K49DWx5_uY
+  description: "Shortlisted for the TIGA UK Games Education Awards 2024 Graduate of the Year: Programmer award. Sponsored by Creative Assembly (Headline Sponsor), Sumo Group (Gold Sponsor), and Lockwood Publishing (Bronze Sponsor), these awards celebrate outstanding students in Games Development courses. Finalists were selected by judges from the TIGA Education Committee, with winners to be announced during a ceremony later this autumn."
+  link: https://tiga.org/news/cream-of-the-crop-tiga-reveals-shortlist-for-uk-games-education-awards-2024
+
 - title: "Develop: Star Awards 2024 (Tomorrow's Star)"
   position: WINNER
   date: July 2024
@@ -6,9 +20,11 @@
   link: https://www.linkedin.com/feed/update/urn:li:activity:7217655156920774657/
 
 - title: TIGA Prize in Recognition for Outstanding Industry Engagement
+  position: WINNER
   date: July 2024
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161294&authkey=%21ACTdg47jdmeaT74&width=698&height=400
-  description: I was awarded this Tiga prize during my graduation at the University of Portsmouth.
+  description: I was awarded this Tiga prize during my graduation at the University of Portsmouth. Along with an accolade in 'Outstanding TIGA Graduate of the Year Computer Games Technology' and 'Outstanding TIGA Graduate of the Year Programmer'
+  link: https://tiga.org/news/tiga-awards-66-students-tiga-graduate-of-the-year-2024-accolade
 
 - title: MCV/DEVELOP 30 Under 30 2023
   position: Nominee
