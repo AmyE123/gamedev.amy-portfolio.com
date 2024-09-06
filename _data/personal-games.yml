@@ -26,7 +26,7 @@
   link: /games/personal/nds-rhythm-game
   start-date: Feb 2024
   end-date: May 2024
-  tags: Solo, C, Assembly, MakeFiles
+  tags: Solo, C, Assembly, MakeFiles, UGC
   downloadable: true
   git: true
 
@@ -47,7 +47,7 @@
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160562&authkey=%21AJF96gS91su3y0w&width=1920&height=1634
   link: /games/personal/beat-city
   start-date: Feburary 2020
-  tags: Solo, Unity, C#
+  tags: Solo, Unity, C#, UGC
   downloadable: true
 
 - name: Western Runner
