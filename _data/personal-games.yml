@@ -5,9 +5,9 @@
   tags: Solo, Unity, C#, Fantasy
   wip: true
 
-- name: Parcel Run UE
+- name: Parcel Run Unreal Engine
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161347&authkey=%21ACX9JPD6mdHLwwA&width=990&height=487
-  link: /games/personal/parcel-run-ue
+  link: /games/personal/parcel-run-unreal-engine
   start-date: July 2024
   tags: Solo, Unreal Engine, C++, PlasticSCM
   downloadable: true
