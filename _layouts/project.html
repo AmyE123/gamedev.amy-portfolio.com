@@ -5,6 +5,37 @@ layout: compress
 <!DOCTYPE html>
 <html>
 
+<style>
+    /* Style for uniform card spacing */
+    .columns.is-multiline.is-centered .column {
+        margin-bottom: 2rem;
+    }
+
+    /* Ensure images have uniform heights */
+    .card-image figure {
+        height: 180px; /* Adjust this height for better proportions */
+    }
+
+    /* Add a shadow and improve the card appearance */
+    .card {
+        transition: transform 0.2s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    /* Enhance the read more button */
+    .card-footer-item {
+        color: #3273dc;
+        font-weight: bold;
+    }
+
+        .card-footer-item:hover {
+            color: #275fa9;
+        }
+</style>
+
 <head>
     {% include head.html %}
 </head>
@@ -62,6 +93,42 @@ layout: compress
                 </div>
                 <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
                     <p>{{ content | escape }}</p>
+                </div>
+
+                <div class="container">
+                    <!-- Relevant Posts Section -->
+                    {% if page.relevant_posts %}
+                    <hr class="has-background-black">
+                    <h2 class="title is-3" style="margin-bottom: 2rem !important;">Relevant Posts</h2>
+                    <div class="columns is-multiline is-centered">
+                        {% for post_url in page.relevant_posts %}
+                        {% assign post = site.posts | where: "url", post_url | first %}
+                        {% if post %}
+                        <div class="column is-two-fifths">
+                            <div class="card" style="border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                                <div class="card-image">
+                                    <figure class="image is-16by9" style="background-image: url({{ post.post-image | escape }}); background-size: cover; background-position: center;"></figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content has-text-left">
+                                            <p class="title is-4" style="margin-bottom:10px !important">{{ post.title | escape }}</p>
+                                            <p class="subtitle is-6" style=" margin:auto .6rem !important">{{ post.date | date: "%-B %d, %Y" | escape }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="content" style="min-height: 60px;">
+                                        {{ post.description | truncate: 100 | escape }}
+                                    </div>
+                                </div>
+                                <footer class="card-footer">
+                                    <a href="{{ post.url | absolute_url }}" class="card-footer-item has-text-link">Read More</a>
+                                </footer>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                 </div>
 
                 {% unless site.disqus-shortname == "" %}
