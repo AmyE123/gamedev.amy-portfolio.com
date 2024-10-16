@@ -89,9 +89,14 @@
         <div class="hero-body">
             <div class="container has-text-centered" id="page-section">
                 <div class="section">
-                    <h1 class="title is-uppercase has-text-weight-bold responsive-title">
-                        Honours & Awards
-                    </h1>
+                    <div style="display: flex; justify-content: center; align-items: center; position: relative; flex-wrap: wrap;">
+                        <h1 class="title is-uppercase has-text-weight-bold responsive-title" style="flex: 1 1 100%; text-align: center;">
+                            Honours & Awards
+                        </h1>
+                        <label style="margin-top: 10px; font-size: 0.875rem; text-align: right; flex: 0 1 auto;" class="checkbox-label">
+                            <input type="checkbox" id="hide-nominee-checkbox" checked> Hide Nominee Positions
+                        </label>
+                    </div>
                     <hr class="has-background-black">
                     <div class="columns is-centered is-multiline is-mobile">
                         {% for honour in site.data.honours-awards %}
@@ -124,6 +129,33 @@
     </section>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select the checkbox
+            var hideNomineeCheckbox = document.getElementById('hide-nominee-checkbox');
+
+            // Function to toggle visibility of nominee cards
+            function toggleNomineeCards() {
+                var nomineeCards = document.querySelectorAll('.position.nominee');
+                nomineeCards.forEach(function (card) {
+                    // Check if the card's parent div is the honour-card, then toggle it
+                    var honourCard = card.closest('.column');
+                    if (hideNomineeCheckbox.checked) {
+                        honourCard.style.display = 'none';  // Use display:none to remove the element from the layout
+                    } else {
+                        honourCard.style.display = 'block';  // Display the card again
+                    }
+                });
+            }
+
+            // Initially hide nominee cards based on the checkbox being checked
+            toggleNomineeCards();
+
+            // Add event listener for checkbox change
+            hideNomineeCheckbox.addEventListener('change', function () {
+                toggleNomineeCards();
+            });
+        });
+
         function toggleDescription(element, event) {
             event.preventDefault(); // Prevent the link from being triggered
             event.stopPropagation(); // Stop the event from propagating to the parent <a> tag
