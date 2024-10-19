@@ -1,0 +1,35 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches:
+      - gd_posts  # or whichever branch is your default branch
+    paths:
+      - '_posts/**'  # Trigger the action only when files in _posts/ are changed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2  # Check out the repository code
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.x'  # Specify the Ruby version for Jekyll
+    
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install  # Installs the necessary Ruby gems (Jekyll, etc.)
+
+    - name: Build the Jekyll site
+      run: |
+        bundle exec jekyll build  # Builds the Jekyll site into the _site folder
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3  # GitHub Action for deploying to GitHub Pages
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to authenticate the action
+        publish_dir: ./_site  # Directory where the built Jekyll site is stored
