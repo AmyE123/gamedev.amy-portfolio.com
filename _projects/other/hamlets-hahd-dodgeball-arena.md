@@ -3,7 +3,20 @@ title: Hamlet's HAHD Dodgeball Arena
 categories: other
 layout: project
 post-image: "https://1drv.ms/i/s!Ap7Df9xJ6JSVg9wfn0eFOyPKbzeGbw?embed=1&width=1920&height=1634"
-description: 
+description: "Hamlet's Dodgeball Arena (or HAHD), is a massively multiplayer dodgeball game aimed at younger players."
+project-type: "Marketing Pitch"
+date: 2022-12-16
+duration: "~4 Months"
+status: "Completed"
+developers:
+  - "Amy Elliott"
+  - "Ethan Cardus"
+  - "George Rose"
+  - "Lewis Truong"
+  - "Ethan Hartup"
+roles:
+  - "Pitching"
+  - "Designing"
 islegacy: false
 legacylink: https://legacy.amy-portfolio.com/other/hamlets-dodgeball-arena#/
 relevant-blogs:
