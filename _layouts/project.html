@@ -3,6 +3,18 @@ layout: compress
 ---
 
 <!DOCTYPE html>
+<style>
+    #relevant-blogs-section .is-full,
+    #relevant-blogs-section .is-half-desktop,
+    #relevant-blogs-section .is-one-third-desktop {
+        display: flex;
+        justify-content: center;
+    }
+
+    #relevant-blogs-section .columns.is-multiline {
+        justify-content: center;
+    }
+</style>
 <html>
 
 <head>
@@ -11,10 +23,11 @@ layout: compress
 
 <body>
     {% include navbar.html %}
-
+    
     {% if page.islegacy %}
     {% include wip.html %}
     {% else %}
+
     <section class="hero is-fullheight has-text-centered" id="post">
         <div class="hero-body">
             <div class="container">
@@ -51,18 +64,51 @@ layout: compress
                         </p>
                         {% endunless %}
                         {% assign words = content | number_of_words %}
+                        {% assign reading_time = words | divided_by:180 %}
                         {% unless content.size == 0 %}
                         <p class="subtitle is-uppercase">
-                            <i class="fas fa-clock"></i> <b class="has-text-link">
-                                {{ words | divided_by: 180 | escape }} min
-                            </b>READ
+                            {% if reading_time <= 1 %}
+                            <i class="fas fa-photo-video"></i> <b class="has-text-link">Multimedia</b>
+                            {% else %}
+                            <i class="fas fa-clock"></i> <b class="has-text-link">{{ reading_time | escape }} min</b> READ
+                            {% endif %}
                         </p>
                         {% endunless %}
                     </div>
                 </div>
                 <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
-                    <p>{{ content | escape }}</p>
+                    {% include callout.html %}
+                    <p>{{ content }}</p>
                 </div>
+
+                <hr>
+
+                <section id="relevant-blogs-section">
+                    {% if page.relevant-blogs %}
+                    <div class="container">
+                        <h2 class="title is-2 has-text-centered" style="padding-bottom: 20px">Relevant Blogs</h2>
+                        <div class="columns is-multiline is-variable is-3">
+                            {% assign blog_count = page.relevant-blogs | size %}
+                            {% for blog in page.relevant-blogs %}
+                            {% assign post = site.posts | where: "url", blog | first %}
+
+                            {% if blog_count == 1 %}
+                            <div class="column is-full has-text-centered">
+                                {% elsif blog_count >= 2 %}
+                                <div class="column is-one-fifth-desktop has-text-centered">
+                                    {% endif %}
+                                    <div class="blog-highlight-card" data-tags="{{ post.tags | join: ', ' | escape }}">
+                                        {% include blog-highlight-card.html %}
+                                    </div>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                </section>
+
+                <hr>
 
                 {% unless site.disqus-shortname == "" %}
                 <div class="disqus-comments" id="disqus_thread"></div>

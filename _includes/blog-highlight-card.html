@@ -1,6 +1,6 @@
 <div class="blog-highlight-card" id="blog-highlight-card">
     <div class="image" style="background-image: url({{ post.post-image | escape }});"></div>
-    <a href="{{ post.url | absolute_url | escape }}">
+    <a href="{{ post.url | absolute_url | escape }}" target="_blank">
         <div class="content" style="padding:5px">
             <h1>{{ post.title | escape }}</h1>
             <div class="has-text-grey truncated-description">
