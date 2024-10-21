@@ -1,0 +1,12 @@
+{% if page.callout %}
+<div style="margin-bottom: 20px;">
+    <div style="display: flex; align-items: center; background-color: #e3f2fd; padding: 10px; margin-top: 20px; border-radius: 5px; border-left: 5px solid #1976d2;">
+        <div style="margin-right: 10px; font-size: 24px; color: #1976d2;">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div>
+            <p style="margin: 0; color: #424242;">{{ page.callout | escape }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}

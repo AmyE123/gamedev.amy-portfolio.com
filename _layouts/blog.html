@@ -89,10 +89,25 @@
         });
     });
 
+        let selectedTags = []; // Store the selected tags globally
+
         function updateTagButtons() {
             const hideMiscPosts = document.getElementById('hideMiscPosts').checked;
             const tagFiltersContainer = document.getElementById('tag-filters-container');
             tagFiltersContainer.innerHTML = '';
+
+            const visibleTagCounts = {};
+
+            // Count tags only for visible posts
+            document.querySelectorAll('.blog-card').forEach(card => {
+                if (card.style.display !== 'none') { // Only count tags for visible posts
+                    const tags = card.getAttribute('data-tags').split(', ');
+                    tags.forEach(tag => {
+                        if (!visibleTagCounts[tag]) visibleTagCounts[tag] = 0;
+                        visibleTagCounts[tag]++;
+                    });
+                }
+            });
 
             const categories = {
                 'languages': [],
@@ -100,9 +115,9 @@
                 'others': []
             };
 
-            Object.keys(tagCounts).forEach(tag => {
+            Object.keys(visibleTagCounts).forEach(tag => {
                 if (hideMiscPosts && (tag === 'Game Dev London Podcast' || tag === 'Misc')) {
-                    return;
+                    return; // Skip misc tags if the checkbox is checked
                 }
 
                 const category = getTagCategory(tag);
@@ -114,63 +129,89 @@
                 categories[category].sort();
             }
 
-            // Function to create and append buttons
             function appendButtons(tags, category) {
                 tags.forEach(tag => {
                     const button = document.createElement('span');
-                    button.innerText = `${tag} (${tagCounts[tag]})`;
+                    button.innerText = `${tag} (${visibleTagCounts[tag] || 0})`; // Ensure visible counts only
                     button.classList.add('tag', 'tag-filter-button', tagColors[category]);
                     button.setAttribute('data-tag', tag);
+
+                    // Apply the active class if this tag is selected
+                    if (selectedTags.includes(tag)) {
+                        button.classList.add('active');
+                    }
+
                     tagFiltersContainer.appendChild(button);
                 });
             }
 
-            // Append buttons in the order of categories
             appendButtons(categories['languages'], 'languages');
             appendButtons(categories['engines/libraries'], 'engines/libraries');
             appendButtons(categories['others'], 'others');
 
+            // Reset button logic
             const resetButton = document.createElement('span');
             resetButton.innerText = 'Reset Filters';
             resetButton.classList.add('tag', 'tag-filter-button', 'reset');
             resetButton.addEventListener('click', () => {
-                document.querySelectorAll('.tag-filter-button').forEach(btn => btn.classList.remove('active'));
-                filterPosts();
+                // Refresh the page to reset everything
+                location.reload(); // This will refresh the page
             });
             tagFiltersContainer.appendChild(resetButton);
 
             document.querySelectorAll('.tag-filter-button').forEach(button => {
                 button.addEventListener('click', () => {
-                    document.querySelectorAll('.tag-filter-button').forEach(btn => btn.classList.remove('active'));
-                    if (!button.classList.contains('reset')) {
+                    const tag = button.getAttribute('data-tag');
+
+                    if (!selectedTags.includes(tag)) {
+                        selectedTags.push(tag); // Add tag to selectedTags array
                         button.classList.add('active');
+                    } else {
+                        selectedTags = selectedTags.filter(t => t !== tag); // Remove tag if it's already selected
+                        button.classList.remove('active');
                     }
+
                     filterPosts();
                 });
             });
         }
 
-    // Filter posts based on selected tag
-    function filterPosts() {
-        const selectedTag = document.querySelector('.tag-filter-button.active')?.getAttribute('data-tag');
-        const hideMiscPosts = document.getElementById('hideMiscPosts').checked;
+        // Modify filterPosts to use selectedTags array and match all selected tags
+        function filterPosts() {
+            const hideMiscPosts = document.getElementById('hideMiscPosts').checked;
 
-        document.querySelectorAll('.blog-card').forEach(card => {
-            const tags = card.getAttribute('data-tags').split(', ');
-            const hasSelectedTag = !selectedTag || tags.includes(selectedTag);
-            const isMisc = tags.includes('Game Dev London Podcast') || tags.includes('Misc');
+            document.querySelectorAll('.blog-card').forEach(card => {
+                const tags = card.getAttribute('data-tags').split(', ');
+                const isMisc = tags.includes('Game Dev London Podcast') || tags.includes('Misc');
 
-            if ((hideMiscPosts && isMisc) || !hasSelectedTag) {
-                card.style.display = 'none';
-            } else {
-                card.style.display = '';
-            }
+                // Determine if post should be shown based on selected tags and Misc filter
+                let matchesSelectedTags = true; // Default to true (show all) if no tags are selected
+
+                // If tags are selected, check if the post matches all selected tags
+                if (selectedTags.length > 0) {
+                    matchesSelectedTags = selectedTags.every(tag => tags.includes(tag));
+                }
+
+                // Apply the filter logic: hide if Misc is checked and it's a Misc post, or if it doesn't match selected tags
+                if ((hideMiscPosts && isMisc) || !matchesSelectedTags) {
+                    card.style.display = 'none'; // Hide non-matching or miscellaneous posts
+                } else {
+                    card.style.display = ''; // Show matching or all posts
+                }
+            });
+
+            // Update tag buttons after filtering is applied
+            updateTagButtons();
+        }
+
+        document.getElementById('hideMiscPosts').addEventListener('change', filterPosts);
+
+        window.addEventListener('load', () => {
+            // Call updateTagButtons on page load to display the tag buttons initially
+            updateTagButtons();
+            filterPosts(); // Apply filters and show/hide posts on load
         });
 
-        updateTagButtons();
-    }
-
-    document.getElementById('hideMiscPosts').addEventListener('change', filterPosts);
 
     function generateTags(tags) {
         if (!tags) return '';
@@ -233,6 +274,10 @@
 
         .tag-others {
             background-color: #eeeeee !important;
+        }
+
+        .tag-filter-button.active {
+            border-color: #ff9900 !important;
         }
     </style>
 
