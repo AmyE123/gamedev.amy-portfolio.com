@@ -17,8 +17,6 @@ developers:
 roles:
   - "Pitching"
   - "Designing"
-islegacy: false
-legacylink: https://legacy.amy-portfolio.com/other/hamlets-dodgeball-arena#/
 relevant-blogs:
 - /blog/collaborating-on-a-game-pitch
 callout: "Read the scripts and more on the related blog post."
