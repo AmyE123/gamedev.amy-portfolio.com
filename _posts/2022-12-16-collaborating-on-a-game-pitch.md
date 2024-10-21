@@ -2,7 +2,7 @@
 title: "Collaborating on a Game Pitch"
 layout: post
 post-image: "https://1drv.ms/i/s!Ap7Df9xJ6JSVg9wfn0eFOyPKbzeGbw?embed=1&width=1920&height=1634"
-description: "For one of my University modules, I had the opportunity to work with a group to pitch a game idea. Experience in pitching gave me a different perspective on game development as a whole."
+description: "For one of my University modules, I worked with a group to pitch a game idea. Experience in pitching gave me a different perspective on game development as a whole."
 legacy: false
 highlight: false
 future-notes:
