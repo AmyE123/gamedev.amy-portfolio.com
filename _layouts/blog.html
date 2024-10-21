@@ -89,7 +89,7 @@
         });
     });
 
-        let selectedTag = null; // Store the selected tag globally
+        let selectedTags = []; // Store the selected tags globally
 
         function updateTagButtons() {
             const hideMiscPosts = document.getElementById('hideMiscPosts').checked;
@@ -100,7 +100,7 @@
 
             // Count tags only for visible posts
             document.querySelectorAll('.blog-card').forEach(card => {
-                if (card.style.display !== 'none') {
+                if (card.style.display !== 'none') { // Only count tags for visible posts
                     const tags = card.getAttribute('data-tags').split(', ');
                     tags.forEach(tag => {
                         if (!visibleTagCounts[tag]) visibleTagCounts[tag] = 0;
@@ -117,7 +117,7 @@
 
             Object.keys(visibleTagCounts).forEach(tag => {
                 if (hideMiscPosts && (tag === 'Game Dev London Podcast' || tag === 'Misc')) {
-                    return;
+                    return; // Skip misc tags if the checkbox is checked
                 }
 
                 const category = getTagCategory(tag);
@@ -132,12 +132,12 @@
             function appendButtons(tags, category) {
                 tags.forEach(tag => {
                     const button = document.createElement('span');
-                    button.innerText = `${tag} (${visibleTagCounts[tag]})`;
+                    button.innerText = `${tag} (${visibleTagCounts[tag] || 0})`; // Ensure visible counts only
                     button.classList.add('tag', 'tag-filter-button', tagColors[category]);
                     button.setAttribute('data-tag', tag);
 
-                    // Apply the active class if this is the selected tag
-                    if (tag === selectedTag) {
+                    // Apply the active class if this tag is selected
+                    if (selectedTags.includes(tag)) {
                         button.classList.add('active');
                     }
 
@@ -149,25 +149,26 @@
             appendButtons(categories['engines/libraries'], 'engines/libraries');
             appendButtons(categories['others'], 'others');
 
+            // Reset button logic
             const resetButton = document.createElement('span');
             resetButton.innerText = 'Reset Filters';
             resetButton.classList.add('tag', 'tag-filter-button', 'reset');
             resetButton.addEventListener('click', () => {
-                selectedTag = null; // Clear selected tag on reset
-                document.querySelectorAll('.tag-filter-button').forEach(btn => btn.classList.remove('active'));
-                filterPosts();
+                // Refresh the page to reset everything
+                location.reload(); // This will refresh the page
             });
             tagFiltersContainer.appendChild(resetButton);
 
             document.querySelectorAll('.tag-filter-button').forEach(button => {
                 button.addEventListener('click', () => {
-                    document.querySelectorAll('.tag-filter-button').forEach(btn => btn.classList.remove('active'));
+                    const tag = button.getAttribute('data-tag');
 
-                    if (!button.classList.contains('reset')) {
-                        selectedTag = button.getAttribute('data-tag'); // Store selected tag
+                    if (!selectedTags.includes(tag)) {
+                        selectedTags.push(tag); // Add tag to selectedTags array
                         button.classList.add('active');
                     } else {
-                        selectedTag = null; // Reset if clicked
+                        selectedTags = selectedTags.filter(t => t !== tag); // Remove tag if it's already selected
+                        button.classList.remove('active');
                     }
 
                     filterPosts();
@@ -175,30 +176,42 @@
             });
         }
 
-        // Modify filterPosts to use selectedTag variable
+        // Modify filterPosts to use selectedTags array and match all selected tags
         function filterPosts() {
             const hideMiscPosts = document.getElementById('hideMiscPosts').checked;
 
             document.querySelectorAll('.blog-card').forEach(card => {
                 const tags = card.getAttribute('data-tags').split(', ');
-                const hasSelectedTag = !selectedTag || tags.includes(selectedTag);
                 const isMisc = tags.includes('Game Dev London Podcast') || tags.includes('Misc');
 
-                if ((hideMiscPosts && isMisc) || !hasSelectedTag) {
-                    card.style.display = 'none';
+                // Determine if post should be shown based on selected tags and Misc filter
+                let matchesSelectedTags = true; // Default to true (show all) if no tags are selected
+
+                // If tags are selected, check if the post matches all selected tags
+                if (selectedTags.length > 0) {
+                    matchesSelectedTags = selectedTags.every(tag => tags.includes(tag));
+                }
+
+                // Apply the filter logic: hide if Misc is checked and it's a Misc post, or if it doesn't match selected tags
+                if ((hideMiscPosts && isMisc) || !matchesSelectedTags) {
+                    card.style.display = 'none'; // Hide non-matching or miscellaneous posts
                 } else {
-                    card.style.display = '';
+                    card.style.display = ''; // Show matching or all posts
                 }
             });
 
-            updateTagButtons(); // Ensure buttons are re-rendered correctly
+            // Update tag buttons after filtering is applied
+            updateTagButtons();
         }
 
         document.getElementById('hideMiscPosts').addEventListener('change', filterPosts);
 
         window.addEventListener('load', () => {
-            filterPosts();
+            // Call updateTagButtons on page load to display the tag buttons initially
+            updateTagButtons();
+            filterPosts(); // Apply filters and show/hide posts on load
         });
+
 
     function generateTags(tags) {
         if (!tags) return '';
