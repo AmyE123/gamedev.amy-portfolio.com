@@ -28,4 +28,4 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", :install_if => Gem.win_platform?
+gem 'wdm', '~> 0.2'

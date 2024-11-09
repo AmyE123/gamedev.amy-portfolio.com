@@ -35,7 +35,7 @@
             z-index: -1;
         }
 
-        .wip-container {
+        .nda-container {
             background: white;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -47,59 +47,59 @@
             z-index: 1;
         }
 
-        .wip-content {
+        .nda-content {
             flex: 1;
             text-align: left;
             padding-right: 20px;
         }
 
-            .wip-content h1 {
+            .nda-content h1 {
                 font-size: 24px;
                 margin-bottom: 10px;
             }
 
-            .wip-content h3 {
+            .nda-content h3 {
                 font-size: 18px;
                 margin-bottom: 20px;
             }
 
-            .wip-content a.button {
+            .nda-content a.button {
                 margin-right: 10px;
             }
 
-        .wip-image {
+        .nda-image {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-            .wip-image img {
+            .nda-image img {
                 max-width: 60%;
                 border-radius: 10px;
             }
 
         @media (max-width: 768px) {
-            .wip-container {
+            .nda-container {
                 flex-direction: column;
                 padding: 10px;
             }
 
-            .wip-content {
+            .nda-content {
                 text-align: center;
                 padding-right: 0;
                 padding-bottom: 10px;
             }
 
-                .wip-content h1 {
+                .nda-content h1 {
                     font-size: 20px;
                 }
 
-                .wip-content h3 {
+                .nda-content h3 {
                     font-size: 16px;
                 }
 
-            .wip-image {
+            .nda-image {
                 display: none;
             }
         }
@@ -113,20 +113,14 @@
                 <source src="https://onedrive.live.com/download?resid=9594E849DC7FC39E%2160478&authkey=!AEpaeSAh2gpGSHY" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
-            <div class="wip-container">
-                <div class="wip-content">
+            <div class="nda-container">
+                <div class="nda-content">
                     <h1>{{ page.title | escape }}</h1>
-                    <h3>This page is currently under development as I transition my portfolio to a new format.</h3>
-                    {% if page.legacylink %}
-                    <h3><i>There is a legacy version of this page available to view.</i></h3>
-                    {% endif %}
+                    <h3>This is an NDA project(s), you aren't going to see anything here!! <br> Check back later :)</h3>
                     <a href="{{ site.url | escape }}{{ site.baseurl | escape }}/" class="button is-primary is-rounded">Home</a>
-                    {% if page.legacylink %}
-                    <a href="{{ page.legacylink | escape }}" target="_blank" class="button is-secondary is-rounded">View Legacy Page</a>
-                    {% endif %}
                 </div>
-                <div class="wip-image">
-                    <img src="https://1drv.ms/i/s!Ap7Df9xJ6JSVg95TkyRGzgznAF2h-Q?embed=1&width=256&height=256" alt="WIP Image">
+                <div class="nda-image">
+                    <img src="https://1drv.ms/i/s!Ap7Df9xJ6JSVg-Fp4IH0_dZcxrOGKw?embed=1&width=512&height=512" alt="NDA Image">
                 </div>
             </div>
         </div>

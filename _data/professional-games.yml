@@ -1,10 +1,18 @@
+- name: Unannounced AAA Game
+  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-Fo6c0WrwzDyDXZYQ?embed=1&width=225&height=225
+  link: /games/professional/nda
+  start-date: Oct 2024
+  end-date: Present
+  tags: Sumo, C++, Unreal Engine
+  wip: true
+  nda: true
+
 - name: Stampede Racing Royale
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160466&authkey=%21ABcky1dXpufoWDE&width=4365&height=2493
   link: /games/professional/stampede-racing-royale
   start-date: Aug 2021
-  end-date: Present
+  end-date: Oct 2024
   tags: Sumo, C#, Unity
-  wip: true
 
 - name: Old School RuneScape
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160484&authkey=%21ADmLN3wUgB-KLw0&width=1201&height=631
@@ -24,19 +32,19 @@
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160498&authkey=%21AFQN6WXj8f29N4w&width=1920&height=1440
   link: /games/professional/redzone-runner-dx
   start-date: Aug 2022
-  end-date: Present
+  end-date: Present (On & Off)
   tags: Altered Gene, C#, Unity, Mobile
 
 - name: Unannounced Games (2)
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160500&authkey=%21AFL-3ggDY3iq7vU&width=743&height=529
-  link: /games/professional/unannounced-ag-games
+  link: /games/professional/nda
   start-date: Jul 2022
-  end-date: Present
+  end-date: Present (On & Off)
   tags: Altered Gene
 
 - name: Unannounced Math Game
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160503&authkey=%21AFAQ0syHUEe_WNo&width=463&height=615
-  link: /games/professional/unannounced-math-game
+  link: /games/professional/nda
   start-date: Jul 2022
   end-date: Aug 2022
   tags: Atypical Types, Altered Gene
