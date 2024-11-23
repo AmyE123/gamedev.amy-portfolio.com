@@ -29,9 +29,9 @@
 
 - name: PS5 DevKit Study
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161187&authkey=%21AEn3H09xamb81bc&width=768&height=574
-  link: /projects/personal/ps5-devkit-study
   start-date: May 2023
   tags: Solo, C++, DevKit, DevTools
+  nda: true
 
 - name: Amy's Math Library
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2161019&authkey=%21AH_KybwF8dRWU08&width=505&height=175

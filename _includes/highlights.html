@@ -4,6 +4,30 @@
             <div class="columns is-multiline">
                 {% for highlight in site.data.highlights %}
                 <div class="column is-one-fourth">
+                    {% if highlight.nda %}
+                    <!-- NDA Highlight Card -->
+                    <div class="card has-background-white-ter highlight-card"
+                         style="filter: grayscale(100%) opacity(70%); position: relative;">
+                        <div class="card-content">
+                            <h2 class="title">{{ highlight.name | escape }}</h2>
+                            <p class="truncated-description">{{ highlight.description | escape }}</p>
+                            <hr class="styled-hr">
+                            <p class="developed-by">Developed by: <span class="developer-name">{{ highlight.developer | escape }}</span></p>
+                            <!-- Date Range Section -->
+                            {% if highlight.start-date and highlight.end-date %}
+                            <div class="date-range">
+                                <p>{{ highlight.start-date | escape }} - {{ highlight.end-date | escape }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="card-image">
+                            <figure class="image is-4by4">
+                                <img src="{{ highlight.image | escape }}" alt="{{ highlight.name | escape }}">
+                            </figure>
+                        </div>
+                    </div>
+                    {% else %}
+                    <!-- Non-NDA Highlight Card -->
                     <a href="{{ site.baseurl | escape }}{{ highlight.link | escape }}" target="_blank">
                         <div class="card has-background-white-ter highlight-card" id="project-card">
                             <div class="card-content">
@@ -26,6 +50,7 @@
                             </div>
                         </div>
                     </a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
