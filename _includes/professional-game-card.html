@@ -2,7 +2,64 @@
     {% for project in site.data.professional-games %}
     <div class="column has-text-centered is-marginless is-one-third-widescreen is-one-third-desktop is-one-fifth-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch"
          id="project-card">
-        <a href="{{ site.baseurl | escape }}{{ project.link | escape }}" target="_blank">
+        {% if project.nda %}
+        <!-- NDA Project Card -->
+        <div class="has-background-black card"
+             style="filter: grayscale(100%) opacity(70%); position: relative;">
+            <figure class="image is-1by1" style="background-image: url({{ project.image | escape }});">
+            </figure>
+            <div class="card-content">
+                <div class="title-container">
+                    <h1 class="title has-text-white is-size-4 fixed-title">{{ project.name | escape }}</h1>
+                </div>
+                <!-- Date Range Section -->
+                {% if project.start-date %}
+                <div class="date-range" style="margin-top: 5px;">
+                    <p class="is-size-7 has-text-grey-light">{{ project.start-date | escape }} {% if project.end-date %} - {{ project.end-date | escape }} {% endif %}</p>
+                </div>
+                {% endif %}
+                <div style="margin-top: 10px;">
+                    {%- assign tags = project.tags | split: ',' -%}
+                    {%- unless tags.size == 0 -%}
+                    <p class="is-uppercase" style="font-size: 0.75rem;">
+                        {% assign i = 0 %}
+                        {% for tag in tags %}
+                        <span class="tag is-link" style="font-size: 0.60rem; margin-bottom: 0.25rem;">{{ tag | strip | escape }}</span>
+                        {% assign i = i | plus: 1 %}
+                        {% endfor %}
+                    </p>
+                    {%- endunless -%}
+                </div>
+                <div class="icon-container" style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 5px;">
+                    {% if project.wip %}
+                    <span class="icon" style="font-size: 1rem; color: white;">
+                        <i class="fa fa-hammer"></i>
+                    </span>
+                    {% endif %}
+                    {% if project.downloadable %}
+                    <span class="icon" style="font-size: 1rem; color: white;">
+                        <i class="fas fa-download"></i>
+                    </span>
+                    {% endif %}
+                    {% if project.git %}
+                    <span class="icon" style="font-size: 1rem; color: white;">
+                        <i class="fab fa-git-alt"></i>
+                    </span>
+                    {% endif %}
+                    {% if project.playable %}
+                    <span class="icon" style="font-size: 1rem; color: white;">
+                        <i class="fas fa-gamepad"></i>
+                    </span>
+                    {% endif %}
+                </div>
+                <div class="nda-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                    <i class="fas fa-lock" style="color: white; font-size: 2rem; margin-bottom: 40%;"></i>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <!-- Non-NDA Project Card -->
+        <a href="{{ site.baseurl | escape }}{{ project.link | escape }}" target="_blank" style="position: relative;">
             <div class="has-background-black card">
                 <figure class="image is-1by1" style="background-image: url({{ project.image | escape }});">
                 </figure>
@@ -13,17 +70,16 @@
                     <!-- Date Range Section -->
                     {% if project.start-date %}
                     <div class="date-range" style="margin-top: 5px;">
-                        <p class="is-size-7 has-text-grey-light">{{ project.start-date | escape }} {% if project.end-date %} - {{ project.end-date | escape }} {% endif %} </p>
+                        <p class="is-size-7 has-text-grey-light">{{ project.start-date | escape }} {% if project.end-date %} - {{ project.end-date | escape }} {% endif %}</p>
                     </div>
                     {% endif %}
                     <div style="margin-top: 10px;">
                         {%- assign tags = project.tags | split: ',' -%}
                         {%- unless tags.size == 0 -%}
                         <p class="is-uppercase" style="font-size: 0.75rem;">
-                            <!-- Adjust the font-size value as needed -->
                             {% assign i = 0 %}
                             {% for tag in tags %}
-                            <span class="tag is-link" style="font-size: 0.60rem; margin-bottom: 0.25rem;">{{ tag | strip | escape }}</span> <!-- Adjust the font-size value as needed -->
+                            <span class="tag is-link" style="font-size: 0.60rem; margin-bottom: 0.25rem;">{{ tag | strip | escape }}</span>
                             {% assign i = i | plus: 1 %}
                             {% endfor %}
                         </p>
@@ -54,6 +110,7 @@
                 </div>
             </div>
         </a>
+        {% endif %}
     </div>
     {% endfor %}
 </div>

@@ -6,6 +6,7 @@ description: This blog will compare and define the games Resident Evil 4, (2005)
 legacy: true
 tags:
 - Misc
+- University
 ---
 
 This blog will compare and define the games Resident Evil 4, (2005) and Twilight Princess, (2006), and their respective genres. These games both have multiple genres associated with them due to how broad they are in gameplay, but it is noticeably clear these games have a main genre for their chosen target audience.
