@@ -177,18 +177,19 @@ layout: compress
 
             .details-grid {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
-                gap: 30px; /* Space between each detail item */
+                gap: 15px;
             }
 
             .detail-item {
                 display: flex;
                 align-items: center;
-                gap: 10px; /* Space between icon and badge */
+                gap: 10px;
             }
 
             .detail-icon i {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 color: #17a2b8;
             }
 
@@ -270,12 +271,13 @@ layout: compress
                 max-width: 100%; /* Allow full width usage */
             }
 
-            .roles-grid {
+            .roles-grid, .tools-grid {
                 display: flex;
                 flex-wrap: wrap;
+                gap: 10px;
                 justify-content: center;
-                gap: 10px; /* Space between each role item */
             }
+
 
             .roles-grid .badge {
                 background-color: #17a2b8;
@@ -290,6 +292,7 @@ layout: compress
                 max-width: 100%;
             }
             }
+
     </style>
 </head>
 
@@ -367,8 +370,9 @@ layout: compress
                     </div>
             
                     {% if page.status or page.tools or page.roles %}
-                    <div class="details-section" style="text-align: center;">
+                    <div class="details-section">
                         <div class="details-grid">
+                            <!-- Status -->
                             {% if page.status %}
                             <div class="detail-item">
                                 <span class="detail-icon">
@@ -377,25 +381,32 @@ layout: compress
                                 <span class="badge">{{ page.status | escape }}</span>
                             </div>
                             {% endif %}
+
+                            <!-- Tools -->
                             {% if page.tools %}
                             <div class="detail-item">
                                 <span class="detail-icon">
                                     <i class="fas fa-wrench"></i>
                                 </span>
-                                {% for tool in page.tools %}
-                                <span class="badge">{{ tool | escape }}</span>
-                                {% endfor %}
+                                <div class="roles-grid">
+                                    {% for tool in page.tools %}
+                                    <span class="badge">{{ tool | escape }}</span>
+                                    {% endfor %}
+                                </div>
                             </div>
                             {% endif %}
-                            
+
+                            <!-- Roles -->
                             {% if page.roles %}
                             <div class="detail-item">
                                 <span class="detail-icon">
                                     <i class="fas fa-user-tag"></i>
                                 </span>
-                                {% for role in page.roles %}
-                                <span class="badge">{{ role | escape }}</span>
-                                {% endfor %}
+                                <div class="roles-grid">
+                                    {% for role in page.roles %}
+                                    <span class="badge">{{ role | escape }}</span>
+                                    {% endfor %}
+                                </div>
                             </div>
                             {% endif %}
                         </div>
