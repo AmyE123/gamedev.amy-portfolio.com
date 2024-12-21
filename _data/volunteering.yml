@@ -1,3 +1,19 @@
+- role: "Tools Development in Games Development"
+  organisation: "Games Talks Live: Scotland 2024"
+  date: November 2024
+  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-NJww11J816DknW0Q?embed=1&width=1670&height=1143
+  description: "I gave a talk at the Games Talks Live events in Edinburugh, Dundee and Glasgow."
+  link:
+  tag: "Conference Talk"
+
+- role: "Building Efficient Custom Tools in Unity to Improve Team Collaboration"
+  organisation: "Develop: North 2024"
+  date: November 2024
+  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-NIl4XOCxTANeWyIw?embed=1&width=1593&height=1593
+  description: "I did my first talk at a games conference! I talked about how useful tools development is in games development."
+  link: https://www.developconference.com/north/speakers/amy-elliott
+  tag: "Conference Talk"
+
 - role: "Career's Day Volunteer"
   organisation: "Game Academy"
   date: July 2024
