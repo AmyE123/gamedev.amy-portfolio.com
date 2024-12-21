@@ -1,17 +1,18 @@
-- name: Unannounced AAA Game
-  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-Fo6c0WrwzDyDXZYQ?embed=1&width=225&height=225
-  start-date: Oct 2024
-  end-date: Present
-  tags: Sumo, C++, Unreal Engine
-  wip: true
-  nda: true
 
 - name: Stampede Racing Royale
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160466&authkey=%21ABcky1dXpufoWDE&width=4365&height=2493
   link: /games/professional/stampede-racing-royale
   start-date: Aug 2021
-  end-date: Oct 2024
+  end-date: Present
   tags: Sumo, C#, Unity
+  wip: true
+
+- name: Unannounced AAA Game
+  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-Fo6c0WrwzDyDXZYQ?embed=1&width=225&height=225
+  start-date: Oct 2024
+  end-date: Dec 2024
+  tags: Sumo, C++, Unreal Engine
+  nda: true
 
 - name: Old School RuneScape
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160484&authkey=%21ADmLN3wUgB-KLw0&width=1201&height=631

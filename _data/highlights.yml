@@ -1,18 +1,18 @@
-- name: Unannounced AAA Unreal Game
-  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-Fq0QGN1XLcP4OW8w?embed=1&width=1920&height=1634
-  developer: Sumo Sheffield
-  description: Working on an exciting project with Sumo Sheffield! This project is currently under NDA. We are using Unreal Engine and C++.
-  start-date: Oct 2024
-  end-date: Present
-  nda: true
-
 - name: Stampede Racing Royale
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160470&authkey=%21ADx_bkNMlHKxTvk&width=1920&height=1634
   link: /games/professional/stampede-racing-royale
   developer: Sumo Leamington
-  description: Worked with several programming teams to create an exciting MMO battle-royale-racing game from start to release!
+  description: Working with several programming teams to create an exciting MMO battle-royale-racing game from start to release!
   start-date: Aug 2021
-  end-date: Oct 2024
+  end-date: Present
+
+- name: Unannounced AAA Unreal Game
+  image: https://1drv.ms/i/s!Ap7Df9xJ6JSVg-Fq0QGN1XLcP4OW8w?embed=1&width=1920&height=1634
+  developer: Sumo Sheffield
+  description: Worked on an exciting project with Sumo Sheffield! This project is currently under NDA. This was using Unreal Engine and C++.
+  start-date: Oct 2024
+  end-date: Dec 2024
+  nda: true
 
 - name: Old School RuneScape
   image: https://onedrive.live.com/embed?resid=9594E849DC7FC39E%2160510&authkey=%21ABZ9V-hPU2Y4DOE&width=1920&height=1634
